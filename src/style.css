@@ -33,3 +33,7 @@ button {
     word-wrap: break-word;
     display: inline-block;
   }
+
+  .red-row {
+    color: red;
+  }

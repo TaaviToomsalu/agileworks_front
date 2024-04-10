@@ -81,6 +81,24 @@ const App = () => {
             [name]: value
         }));
     }
+
+    // Define function to mark a support ticket as solved
+  const markAsSolved = (id) => {
+    // Perform DELETE request to mark the support ticket as solved
+    fetch(`http://localhost:8080/api/support-tickets/${id}`, {
+      method: "DELETE",
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to mark support ticket as solved.");
+        }
+        // Remove the support ticket from the list after it's marked as solved
+        setPöördumised(pöördumised.filter((ticket) => ticket.id !== id));
+      })
+      .catch((error) => {
+        console.error("Error marking support ticket as solved:", error);
+      });
+  };
     
     return(
         <div className='container'>
@@ -111,7 +129,7 @@ const App = () => {
                 <button>Sisesta</button>
             </form>
 
-            <PöördumisedTabel pöördumised={pöördumised} />
+            <PöördumisedTabel pöördumised={pöördumised} markAsSolved={markAsSolved}/>
 
         </div>
     )
