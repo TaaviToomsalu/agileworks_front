@@ -17,3 +17,19 @@ button {
 .list {
     margin-top: 30px;
 }
+
+
+.ticket-table th,
+.ticket-table td {
+  padding: 10px; 
+}
+
+.table-header {
+    padding: 10px;
+  }
+  
+  .kirjeldus-column {
+    max-width: 300px;
+    word-wrap: break-word;
+    display: inline-block;
+  }

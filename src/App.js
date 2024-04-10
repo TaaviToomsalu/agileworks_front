@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import Pöördumine from './components/Pöördumine'
+import PöördumisedTabel from './components/PöördumisedTabel'
 import './style.css'
 
 const App = () => {
@@ -32,16 +32,17 @@ const App = () => {
             });
     }
 
-    useEffect(() => {
-        console.log(formData); // Log the updated formData state
-    }, [formData]);
+
+    // Log the updated formData state
+    // useEffect(() => {
+    //     console.log(formData); 
+    // }, [formData]);
 
     function handleSubmit(event) {
         event.preventDefault();
         
         const newPöördumine = {
             ...formData,
-            //lahendamiseTähtaeg: formData.tahtaeg.toISOString()
         };
 
         console.log("Data before sending:", newPöördumine);
@@ -67,6 +68,11 @@ const App = () => {
         .catch(error => {
             console.error('Error adding ticket:', error);
         });
+
+        setFormData({
+            kirjeldus: "",
+            lahendamiseTähtaeg: new Date()
+        })
     }
 
     function handleChange(name, value) {
@@ -105,17 +111,8 @@ const App = () => {
                 <button>Sisesta</button>
             </form>
 
-            <div className='list'>
-                <h3>Pöördumised</h3>
-                <div className="pöördumised-container" >
-                    {pöördumised.map(pöördumine => <Pöördumine
-                        key={pöördumine.id}
-                        kirjeldus={pöördumine.kirjeldus}
-                        sisestamiseAeg={pöördumine.sisestamiseAeg}
-                        lahendamiseTähtaeg={pöördumine.lahendamiseTähtaeg}
-                    />)}
-                </div>
-            </div>
+            <PöördumisedTabel pöördumised={pöördumised} />
+
         </div>
     )
 }
