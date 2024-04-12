@@ -19,12 +19,12 @@ Selleks, et saada koopia projekti tööle oma kohalikus masinas, järgige järgm
 1. Kloonige hoidla oma kohalikku masinasse:
 
     ```bash
-   git clone <hoidla-url>
+   git clone https://github.com/TaaviToomsalu/agileworks_front
 
 2. Liikuge projekti kausta:
 
     ```bash
-    cd poordumissusteemi-esikylg
+    cd agileworks_front
 
 3. Paigaldage sõltuvused:
 
