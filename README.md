@@ -18,21 +18,24 @@ Selleks, et saada koopia projekti tööle oma kohalikus masinas, järgige järgm
 
 1. Kloonige hoidla oma kohalikku masinasse:
 
-   ```bash
+    ```bash
    git clone <hoidla-url>
 
 2. Liikuge projekti kausta:
 
+    ```bash
     cd poordumissusteemi-esikylg
 
 3. Paigaldage sõltuvused:
 
+    ```bash
     npm install
 
 ### Kasutamine
 
 1. Alustage arendusserverit:
 
+    ```bash
     npm start
 
 2. Avage oma veebibrauser ja minge aadressile http://localhost:3000, et vaadata rakendust.
