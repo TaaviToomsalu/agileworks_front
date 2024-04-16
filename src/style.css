@@ -2,7 +2,7 @@
     margin: 20px;
 }
 
-button {
+form button {
     margin-top: 10px;
 }
 
@@ -29,7 +29,7 @@ button {
   }
   
   .kirjeldus-column {
-    max-width: 300px;
+    width: 250px;
     word-wrap: break-word;
     display: inline-block;
   }

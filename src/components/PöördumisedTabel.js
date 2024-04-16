@@ -17,7 +17,7 @@ const PöördumisedTabel = ({ pöördumised, markAsSolved }) => {
           {pöördumised.map((pöördumine) => (
             <tr 
               key={pöördumine.id}
-              className={pöördumine.aegunudVõiVähemKuiTundJäänud ? "red-row" : ""}
+              className={pöördumine.aegunud ? "red-row" : ""}
             >
               <td className="kirjeldus-column">{pöördumine.kirjeldus}</td>
               <td>
@@ -28,7 +28,7 @@ const PöördumisedTabel = ({ pöördumised, markAsSolved }) => {
               </td>
               <td>
                 <button onClick={() => markAsSolved(pöördumine.id)}>
-                  Märgi lahendatuks
+                  Lahendatud
                 </button>
               </td>
             </tr>
